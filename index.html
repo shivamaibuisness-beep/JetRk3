@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Join Jet Phile - The ultimate Aviator signals channel on Telegram. Get real-time predictions, expert analysis, and community support.">
+    <meta name="keywords" content="Aviator signals, Telegram channel, Jet Phile, Aviator predictions, gaming signals">
+    <meta name="author" content="Jet Phile">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph / Meta Ads Compliance -->
+    <meta property="og:title" content="Jet Phile | Premium Aviator Signals Channel">
+    <meta property="og:description" content="Join 50,000+ members getting real-time Aviator predictions on Telegram.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.ibb.co/1GFb9Jy7/jet-phile-logo.png">
+    <meta property="og:url" content="https://telegram.me/+6ZOFeqDWAZU0MTA0">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jet Phile | Premium Aviator Signals">
+    <meta name="twitter:description" content="Real-time Aviator predictions delivered to your Telegram.">
+
+    <title>Jet Phile | Premium Aviator Signals Channel</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1116892717930191');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none" 
+    src="https://www.facebook.com/tr?id=1116892717930191&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #ff6b35;
+            --accent: #ffd700;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--darker);
+            color: #ffffff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 3D Canvas Background */
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        /* Main Content */
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 1.5rem 3rem;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--primary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #0099cc 100%);
+            color: #000;
+            padding: 1.1rem 2rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(to bottom, transparent, rgba(0, 212, 255, 0.03));
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            opacity: 0.6;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 5rem 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: #000;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 5rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(to bottom, transparent, rgba(0, 212, 255, 0.05));
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 1.5rem;
+            background: var(--darker);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .footer-logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .advertiser-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 500px;
+        }
+
+        .advertiser-section p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .advertiser-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .advertiser-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        .disclaimer {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            margin-top: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 5rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .step {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--darker);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 212, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 212, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="canvas-container">
+        <canvas id="bgCanvas"></canvas>
+    </div>
+
+    <div class="content">
+        <!-- Navigation -->
+        <nav class="fade-in">
+            <div class="logo">
+                <img src="https://i.ibb.co/1GFb9Jy7/jet-phile-logo.png" alt="Jet Phile Logo" onerror="this.style.display='none'">
+                <span style="color: var(--primary);">Jet Phile</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="https://telegram.me/+blUTy2TpEGZkMTQ0" target="_blank">Join Channel</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-badge fade-in delay-1">
+                <span>✈️</span>
+                <span>Live Now • 50,000+ Active Members</span>
+            </div>
+
+            <!-- Logo centered above headline -->
+            <div class="fade-in delay-1" style="margin-bottom: 1.5rem;">
+                <img src="https://i.ibb.co/1GFb9Jy7/jet-phile-logo.png" alt="Jet Phile" 
+                     style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; 
+                            border: 3px solid var(--primary); box-shadow: 0 0 40px rgba(0, 212, 255, 0.4), 
+                            0 0 80px rgba(0, 212, 255, 0.2); animation: float 3s ease-in-out infinite;">
+            </div>
+
+            <h1 class="fade-in delay-2">
+                Master the Skies<br>
+                <span style="color: var(--primary);">With Jet Phile</span>
+            </h1>
+
+            <p class="fade-in delay-3">
+                Get real-time Aviator signals, expert analysis, and data-driven predictions delivered directly to your Telegram. Join the community that's changing the game.
+            </p>
+
+            <div class="cta-group fade-in delay-4">
+                <a href="https://telegram.me/+blUTy2TpEGZkMTQ0" target="_blank" class="btn-primary" onclick="fbq('track', 'Lead');">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 6.498a2.25 2.25 0 0 0-.106 4.03l3.93 1.307 1.5 5.092a1.125 1.125 0 0 0 2.092-.372l.75-3.75 4.5 3a1.125 1.125 0 0 0 1.744-.57l3-15a2.25 2.25 0 0 0-1.89-2.553z"/>
+                    </svg>
+                    Join Telegram Channel
+                </a>
+                <a href="#features" class="btn-secondary">Learn More ↓</a>
+            </div>
+
+            <div class="hero-stats fade-in delay-4">
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Members</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Choose Jet Phile?</h2>
+                    <p>Everything you need to stay ahead in the game, delivered in real-time.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-Time Signals</h3>
+                        <p>Instant notifications the moment our algorithms detect patterns. Never miss an opportunity again.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Data Analytics</h3>
+                        <p>Advanced statistical models and historical data analysis to back every prediction with science.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Risk Management</h3>
+                        <p>Smart bankroll strategies and stop-loss recommendations to protect your investments.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Community Access</h3>
+                        <p>Join an exclusive group of serious players. Share insights, discuss strategies, and grow together.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Optimized</h3>
+                        <p>All signals formatted perfectly for mobile viewing. Quick, clear, and actionable on any device.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Expert Analysis</h3>
+                        <p>Daily market breakdowns and trend analysis from seasoned professionals with years of experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="social-proof">
+            <div class="container">
+                <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Trusted by Players Worldwide</h2>
+                <p style="color: rgba(255,255,255,0.5);">Join thousands who rely on Jet Phile daily</p>
+
+                <div class="trust-badges">
+                    <div class="trust-badge">✓ Instant Delivery</div>
+                    <div class="trust-badge">✓ No Spam</div>
+                    <div class="trust-badge">✓ 100% Free</div>
+                    <div class="trust-badge">✓ Secure</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get Started in 30 Seconds</h2>
+                    <p>Three simple steps to join the winning community.</p>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Click Join</h3>
+                            <p>Tap the Telegram button above. You'll be redirected to the official Jet Phile channel instantly.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Subscribe</h3>
+                            <p>Hit the "Join Channel" button in Telegram. It's completely free and takes just one tap.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Start Winning</h3>
+                            <p>Receive signals immediately. Follow our expert guidance and watch your strategy improve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Ready to Take Off?</h2>
+            <p>Don't miss another signal. Join Jet Phile now and start receiving expert Aviator predictions today.</p>
+            <a href="https://telegram.me/+blUTy2TpEGZkMTQ0" target="_blank" class="btn-primary" style="max-width: 400px; margin: 0 auto;" onclick="fbq('track', 'Lead');">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 6.498a2.25 2.25 0 0 0-.106 4.03l3.93 1.307 1.5 5.092a1.125 1.125 0 0 0 2.092-.372l.75-3.75 4.5 3a1.125 1.125 0 0 0 1.744-.57l3-15a2.25 2.25 0 0 0-1.89-2.553z"/>
+                </svg>
+                Join Jet Phile Now
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.ibb.co/1GFb9Jy7/jet-phile-logo.png" alt="Jet Phile" onerror="this.style.display='none'">
+                    <span>Jet Phile</span>
+                </div>
+
+                <div class="footer-links">
+                    <a href="https://telegram.me/+blUTy2TpEGZkMTQ0" target="_blank">Channel</a>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                </div>
+
+
+
+                <p class="copyright">© 2026 Jet Phile. All rights reserved.</p>
+                <p class="disclaimer">
+                    Disclaimer: This channel provides informational signals and analysis only. Past performance does not guarantee future results. 
+                    All trading and gaming decisions are made at your own risk. Please gamble responsibly and only with funds you can afford to lose.
+                    This is not financial advice.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 3D Particle Animation
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+        let mouse = { x: 0, y: 0 };
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.z = Math.random() * 2 + 0.5;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.color = Math.random() > 0.5 ? '0, 212, 255' : '255, 107, 53';
+            }
+
+            update() {
+                this.x += this.speedX * this.z;
+                this.y += this.speedY * this.z;
+
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 200) {
+                    this.x -= dx * 0.01;
+                    this.y -= dy * 0.01;
+                }
+
+                if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size * this.z, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            resize();
+            particles = [];
+            const particleCount = window.innerWidth < 768 ? 30 : 60;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach((p1, i) => {
+                p1.update();
+                p1.draw();
+
+                particles.slice(i + 1).forEach(p2 => {
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(0, 212, 255, ${0.1 * (1 - dist / 150)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                });
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            init();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        });
+
+        init();
+        animate();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.feature-card, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
